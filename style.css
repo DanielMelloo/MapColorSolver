@@ -1,0 +1,267 @@
+:root{ 
+    --color1: #f9f9e7;
+    --color2: #505045;
+    --color3: #161613;
+    --color4: #c0a1ae;
+    --color5: #c1e0e0;
+    
+    --color6: rgba(127, 17, 224, 0.9);
+    --color7: #9f6bde;
+    --color8: #8d5acb;
+    --color9: #7a49b8;
+    --color10: #6738a5;
+}
+
+@font-face {
+    font-family: 'Ubuntu';
+    src: url('Ubuntu/Ubuntu-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+body{
+    width: 100vw;
+    height: 100vh;
+    border: 0;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: var(--color2);
+    font-family: 'Ubuntu';
+    color: white;  
+}
+
+main{
+    position: relative;
+    max-width: 600px;
+    margin: auto;
+    margin-top: 40px;
+}
+
+#resultsRest{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.searchBarInput{
+    /* Undefines */
+    padding-block: 0;
+    padding-inline: 0;
+    border: 0;
+
+    width: calc(100% - 2*10px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+
+}
+
+.searchResults{
+    position: absolute;
+    width: 100%;
+
+    background: rgba( 103, 56, 165, 0.9 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 20px );
+    -webkit-backdrop-filter: blur( 20px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    
+    z-index: 1;
+    color: var(--color3);
+
+    max-height: 300px;
+
+    overflow-y: auto;
+
+    display: none;
+}
+
+
+.color-option {
+    padding: 10px;
+    cursor: pointer;
+    color: whitesmoke;
+}
+
+
+#selectedColors {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: calc(100% - 2*15px);
+
+    align-items: center;
+    border-radius: 10px;
+    padding: 15px;
+
+    background: rgba(255, 0, 221, 0.135);
+    box-shadow: 0 8px 32px 0 rgba(79, 79, 79, 0.37);
+    backdrop-filter: blur( 8.5px );
+    -webkit-backdrop-filter: blur( 8.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+
+    display: none;
+
+    margin-bottom: 40px;
+}
+
+.color-box {
+    position: relative;
+    width: 45px;
+    height: 45px;
+
+    margin: 10px 10px 10px;
+    border: 1px solid var(--color3);
+    border-radius: 10px;
+}
+
+.color-box .remove-color {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 15px;
+    cursor: pointer;
+    color: var(--color3);
+    font-size: 12px;
+    background-color: var(--color5);
+    user-select: none;
+}
+
+
+.color-option:hover, .color-option.highlighted {
+    background-color: var(--color2);
+}
+
+
+.search-option {
+    padding: 10px;
+    cursor: pointer;
+    color: whitesmoke;
+}
+
+.search-option:hover, .search-option.highlighted {
+    background-color: var(--color6);
+}
+
+/* #resultsRest {
+    display: flex;
+    flex-wrap: wrap;
+    width: fit-content;
+    margin: auto;
+
+    align-items: center;
+    border-radius: 10px;
+    padding: 15px;
+
+    background: rgba(255, 0, 221, 0.135);
+    box-shadow: 0 8px 32px 0 rgba(79, 79, 79, 0.37);
+    backdrop-filter: blur( 8.5px );
+    -webkit-backdrop-filter: blur( 8.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+
+    margin-bottom: 40px;
+} */
+
+
+#appliedRests{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: calc(100% - 2*15px);
+
+    align-items: center;
+    border-radius: 10px;
+    padding: 15px;
+
+    background: rgba(255, 0, 221, 0.135);
+    box-shadow: 0 8px 32px 0 rgba(79, 79, 79, 0.37);
+    backdrop-filter: blur( 8.5px );
+    -webkit-backdrop-filter: blur( 8.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+
+    margin-bottom: 40px;
+}
+
+#cityColorDisplayBox{
+
+    border: 1px solid black;
+    width: 45px;
+    height: 45px;
+    border-radius: 5px;
+    background-color: transparent;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#applyDivButton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+button {
+    padding: 10px 20px; /* Espaçamento interno para tornar o botão mais perceptível e fácil de clicar */
+    background-color: var(--color6); /* Uma das cores temáticas para o fundo do botão */
+    color: var(--color1); /* Cor contrastante para o texto, garantindo legibilidade */
+    border: none; /* Remover borda padrão do botão */
+    border-radius: 5px; /* Bordas arredondadas para suavizar a aparência */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    font-size: 1rem; /* Tamanho de fonte adequado */
+    font-family: ubuntu, sans-serif; /* Consistência com a fonte do corpo */
+    transition: background-color 0.3s ease; /* Transição suave para hover */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra sutil para dar profundidade */
+}
+
+button:hover {
+    background-color: var(--color7); /* Mudar a cor de fundo ao passar o mouse para dar feedback visual */
+}
+
+.remove-restriction {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 20px;
+    cursor: pointer;
+    color: white;
+    background-color: var(--color8); /* Um tom de roxo para o botão "x" */
+    border: none;
+    font-weight: bold;
+    user-select: none;
+}
+
+#appliedRests div{
+    margin: 10px; 
+}
+
+.restriction-box {
+    position: relative;
+    padding: 10px;
+    margin: 5px 0; /* Espaço entre as caixas de restrição */
+    background-color: var(--color5); /* Uma cor de fundo para a caixa */
+    border-radius: 5px;
+    /* Adicione mais estilos conforme necessário */
+}
+
+
+#rests{
+    display: none;
+    flex-direction: column;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style mod v1.css">
+    <title>PSR Austrália</title>
+    <script defer src="app v3.js"></script> 
+</head>
+<body>
+    <main>
+        <h3>
+            Seleção de cores do mapa
+        </h3>
+        <div id="controls">
+            <!-- Barra de pesquisa de cores já existente -->
+            <div id="cores">
+                <input type="text" class="searchBarInput" id="searchBox" placeholder="Pesquisar cores..." />
+                <div class="searchResults" id="searchResults"></div>
+                <div id="selectedColors"></div>
+            </div>
+
+            <h3>
+                Criar Restrições
+            </h3>
+            
+            <div id="cidades">
+                <input type="text" class="searchBarInput" id="citySearchBox" placeholder="Pesquisar cidades..." />
+                <div class="searchResults" id="citySearchResults"></div>
+            </div>
+            
+            <div id="selectedColorsSearch">
+                <input type="text" class="searchBarInput"  id="selectedColorsSearchBox" placeholder="Pesquisar nas cores selecionadas..." />
+                <div class="searchResults" id="selectedColorsSearchResults"></div>
+            </div>
+        </div>
+
+        <div id="resultsRest">
+
+        </div>
+
+        <div id="applyDivButton">
+            <button onclick="applyRestrictions()">
+                Aplicar Restrição
+            </button>
+        </div>
+
+        <div id="rests">
+            <h3>
+                Restrições Aplicadas
+            </h3>
+    
+            <div id="appliedRests">
+            </div>
+        </div>
+    </main>
+    
+</body>
+</html>
