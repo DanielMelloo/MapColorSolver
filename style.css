@@ -265,3 +265,53 @@ button:hover {
     display: none;
     flex-direction: column;
 }
+
+
+
+
+
+
+
+
+#loadingElement {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.5);
+    color: var(--color1);
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; /* Empilha verticalmente o loader e a mensagem */
+}
+
+.loader {
+    border: 16px solid var(--color2); /* Light grey */
+    border-top: 16px solid var(--color10); /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 0.5s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#loadingMessage {
+    color: var(--color1);
+    font-size: 1.5em;
+    margin-top: 20px; /* Espaço entre o loader e a mensagem */
+}
+
+
+
+#output img{
+
+    min-width: 100vw;
+    min-height: 100vh;
+}
